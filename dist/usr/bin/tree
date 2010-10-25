@@ -1,0 +1,6 @@
+#!/bin/sh
+
+DIR=`dirname $0`
+scala -cp ${DIR}/../lib/tree_2.8.0-1.0.jar -Xnojline tree.Tree `pwd`
+
+exit 0
