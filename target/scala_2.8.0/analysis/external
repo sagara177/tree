@@ -1,2 +1,4 @@
 #External Dependencies
-#Tue Oct 26 07:54:51 JST 2010
+#Thu Nov 18 01:41:30 JST 2010
+/Users/sagara/tree/project/boot/scala-2.8.0/lib/scala-library.jar=src/main/scala/tree/Tree.scala
+/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Classes/classes.jar=src/main/scala/tree/Tree.scala

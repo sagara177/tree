@@ -1,6 +1,14 @@
 #!/bin/sh
 
 DIR=`dirname $0`
-scala -cp ${DIR}/../lib/tree_2.8.0-1.0.jar -Xnojline tree.Tree `pwd`
+LIBS=${DIR}/../lib/scala-library.jar:${DIR}/../lib/tree_2.8.0-1.0.jar
+
+if [ $# -eq 0 ] ; then
+    java -Dfile.encoding=UTF-8 -cp ${LIBS} tree.Tree `pwd`
+elif [ ${1:0:1} = / ] ; then
+    java -Dfile.encoding=UTF-8 -cp ${LIBS} tree.Tree $1
+else
+    java -Dfile.encoding=UTF-8 -cp ${LIBS} tree.Tree `pwd`/$1
+fi    
 
 exit 0

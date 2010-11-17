@@ -1,2 +1,1 @@
-export PATH=$PATH:/usr/local/scala-2.8.0.final/bin
 export PATH=$PATH:~/usr/bin

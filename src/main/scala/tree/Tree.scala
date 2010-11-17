@@ -1,9 +1,5 @@
 package tree
 
-/**
- * Hello world!
- *
- */
 object Tree extends Application {
   private var dirNum = 0;
   private var fileNum = 0;
@@ -24,20 +20,21 @@ object Tree extends Application {
         dirNum += 1
         curStr = tree(files(i), branch + curBranch1) :::
                   ((branch + curBranch2 + name) :: curStr)
-      }
-      else {
+      } else {
         fileNum += 1
         curStr = (branch + curBranch2 + name) :: curStr
       }
     }
-
     curStr
   }
 
-  override def main(args: Array[String]) {
-    val treeList = tree(new java.io.File(args(0)), "") ::: List(".")
-
-    println(treeList.reverse.mkString("\n") +
-            "\n\n%d directories, %d files".format(dirNum, fileNum))
+  override def main(args: Array[String]): Unit = {
+    try {
+      val treeList = tree(new java.io.File(args(0)), "") ::: List(".")
+      println(treeList.reverse.mkString("\n") +
+              "\n\n%d directories, %d files".format(dirNum, fileNum))
+    } catch {
+      case e: NullPointerException => println("[error opening dir]")
+    }
   }
 }

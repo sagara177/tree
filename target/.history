@@ -6,3 +6,10 @@ package
 exit
 clean
 exit
+compile
+:q
+quit
+compile
+package
+:q
+quit
